@@ -1,0 +1,54 @@
+{"type":"object",
+  "title": "user",
+  "description": "A user of Xingyun",
+  "properties":{
+    "id":{
+      "description":"Unique identifier - UUID",
+      "identity":true,
+      "readonly":true,
+      "type":"string",
+      "maxLength": 22,
+      "minLength":22
+    },
+    "name":{
+      "description": "用户的名称",
+      "type":"string",
+      "maxLength": 50
+    },
+    "gender":{
+      "description": "性别",
+      "enum":[1, 0],
+      "type":"number"
+    },
+    "company":{
+      "description": "所属公司名",
+      "type":"string",
+      "maxLength": 50
+    },
+    "birthday":{
+      "format":"date",
+      "type":"string"
+    },
+    "location":{
+      "description": "所在地, 以“北京 海淀”这样的格式体现",
+      "type":"string",
+      "maxLength": 50
+    },
+    "trade":{
+      "description": "所属行业, 以“时尚 设计”这样的格式体现",
+      "type":"string",
+      "maxLength": 50
+    },
+    "pictures":{
+      "description": "用户头像列表",
+      "type":"array",
+      "properties":{"$ref":"./picture.json#properties"}
+    }
+  },
+
+  "links":[
+    { "rel": "self",
+      "href": "users/me"
+    }
+  ]
+}

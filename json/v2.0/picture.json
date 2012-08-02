@@ -1,0 +1,12 @@
+{ "type":"object",
+  "title": "picture",
+  "description": "一张图片",
+  "properties":{
+    "url":{
+      "description": "该图片的 URL",
+      "type":"string",
+      "format": "url"
+    }
+  },
+  "links":[]
+}

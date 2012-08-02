@@ -1,6 +1,6 @@
 {"type":"object",
   "title": "user",
-  "description": "A user of Xingyun",
+  "description": "一位星云用户",
   "properties":{
     "id":{
       "description":"Unique identifier - UUID",
@@ -39,6 +39,11 @@
       "type":"string",
       "maxLength": 50
     },
+    "level":{
+      "description": "级别",
+      "type":"string",
+      "maxLength": 50
+    },
     "pictures":{
       "description": "用户头像列表",
       "type":"array",
@@ -48,7 +53,13 @@
 
   "links":[
     { "rel": "self",
-      "href": "users/me"
+      "href": "/me"
+    },
+    { "rel": "other",
+      "href": "/user/{id}"
+    },
+    { "rel": "stars",
+      "href": "/info/stars"
     }
   ]
 }

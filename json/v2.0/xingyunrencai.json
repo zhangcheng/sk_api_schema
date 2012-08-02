@@ -1,0 +1,39 @@
+{"type":"object",
+  "title": "stars",
+  "description": "星云人才列表",
+  "properties":{
+    "stars":{
+      "description": "明星们",
+      "type":"array",
+      "properties":{"$ref":"./user.json#properties"}
+    }
+  },
+
+  "links":[
+    { "rel": "self",
+      "href": "/info/stars",
+      "properties" : {
+        "offset":{
+          "title" : "Offset",
+          "description": "Offset",
+          "type":"number"
+        },
+        "limit":{
+          "title" : "Limit",
+          "description": "Limit",
+          "type":"number"
+        },
+        "trade":{
+          "title" : "By trade",
+          "description": "按行业过滤",
+          "type":"string"
+        },
+        "level":{
+          "title" : "By level",
+          "description": "按级别过滤",
+          "type":"string"
+        }
+      }
+    }
+  ]
+}
